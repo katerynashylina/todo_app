@@ -1,4 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import classNames from 'classnames';
 import React, {
   useContext, useState, useEffect, useRef,
@@ -83,10 +84,9 @@ export const TodoItem: React.FC<Props> = ({ todo }) => {
         onDoubleClick={() => setIsEditing(true)}
         className={classNames('todo', { completed: todo.completed })}
       >
-        <label className="todo__status-label" htmlFor="todoCheckbox">
+        <label className="todo__status-label">
           <input
             type="checkbox"
-            id="todoCheckbox"
             className="todo__status"
             onChange={handleTodoCheck}
             checked={completed}
